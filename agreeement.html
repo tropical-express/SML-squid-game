@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agreement - SML Squid Game Fan Site</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+    }
+    .agreement-box {
+      background-color: #111;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(255,0,85,0.5);
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    button {
+      background-color: #ff0055;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="agreement-box">
+    <h1>Welcome to SML Squid Game Fan Site</h1>
+    <p>By entering, you agree that this site is a fan site and does not own the content. You also confirm that you are old enough to view the content.</p>
+
+    <label>
+      <input type="checkbox" id="agreeCheckbox">
+      I agree
+    </label>
+
+    <br>
+
+    <button id="enterBtn" disabled>Enter Site</button>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById("agreeCheckbox");
+    const enterBtn = document.getElementById("enterBtn");
+
+    // Enable button only if checked
+    checkbox.addEventListener("change", () => {
+      enterBtn.disabled = !checkbox.checked;
+    });
+
+    // Redirect to main page
+    enterBtn.addEventListener("click", () => {
+      window.location.href = "index.html"; // your main page
+    });
+  </script>
+</body>
+</html>
